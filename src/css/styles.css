@@ -23,7 +23,7 @@ body {
       margin-right: auto;
 
 }
-.country-info{
+.country-info__wrapper{
   width: 70vw;
   margin-left: auto;
   margin-right: auto;
@@ -31,7 +31,7 @@ body {
   display: flex;
   gap: 5%;
 
-  /* background-color: #fff; */
+  background-color: #fff;
   border-radius: 5px;
 
 
@@ -47,19 +47,17 @@ body {
     width: 50vw;
       margin-left: auto;
       margin-right: auto;
-      padding: 20px;
       list-style: none;
-      padding: 40px 20px 10px 20px;
-      /* padding-top: 40px; */
-      /* background-color: #fff; */
+      padding: 0;
+
+      background-color: #fff;
       border-radius: 5px;
 }
 .country-list__item{
   display: flex;
   gap: 5%;
-  margin-bottom: 20px;
-  
- 
+  padding: 30px 30px 0 30px;
+  width: 50vw; 
 
 }
 .country-list__item:not(:last-child){
