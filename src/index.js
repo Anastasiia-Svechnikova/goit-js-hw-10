@@ -16,19 +16,16 @@ refs.input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
   const result = e.target.value.trim();
+  refs.countryInfo.innerHTML = '';
+  refs.countryList.innerHTML = '';
 
   if (!result) {
-    refs.countryInfo.innerHTML = '';
-    refs.countryList.innerHTML = '';
     return;
   }
 
   fetchCountries(result)
     .then(r => {
       if (r.length > 10) {
-        refs.countryInfo.innerHTML = '';
-        refs.countryList.innerHTML = '';
-
         Notiflix.Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
@@ -39,9 +36,6 @@ function onInput(e) {
       }
     })
     .catch(() => {
-      refs.countryInfo.innerHTML = '';
-      refs.countryList.innerHTML = '';
-
       Notiflix.Notify.failure('Oops, there is no country with that name');
     });
 }
@@ -61,7 +55,6 @@ function renderCountry({
     capitalDestr,
     languagesDestr,
   });
-  refs.countryList.innerHTML = '';
 
   refs.countryInfo.innerHTML = markup;
 }
@@ -76,7 +69,6 @@ function renderCountriesList(arr) {
 </li>`
     );
   }, '');
-  refs.countryInfo.innerHTML = '';
 
   refs.countryList.innerHTML = markup;
 }
