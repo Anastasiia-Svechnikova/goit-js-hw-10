@@ -71,7 +71,7 @@ function renderCountriesList(arr) {
     return (
       acc +
       `<li class="country-list__item">
-    <img class="country-list__flag" src="${flags.svg}" alt="${name.official}">
+    <img class="country-list__flag" src="${flags.svg}" alt="${name.official}" width="70">
     <p class="country-list__name">${name.official}</p>
 </li>`
     );
