@@ -47,7 +47,8 @@ function renderCountry({
   capital: [capitalDestr],
   population,
 }) {
-  const languagesDestr = Object.values(languages);
+  const languagesDestr = Object.values(languages).map(el => ' ' + el);
+
   const markup = countryCardTpl({
     name,
     flags,
